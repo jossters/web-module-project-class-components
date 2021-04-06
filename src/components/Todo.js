@@ -3,12 +3,12 @@ import React from "react";
 const Todo = props => {
 
 const handleClick = ()=>{
-  props.toggleItem(props.todo.id);
+  props.toggleTodo(props.todo.id);
 }
 
     return (
         <div onClick={handleClick}
-        classname={`todo${props.todo.done ? 'done' : ''}`}>
+        className={`todo${props.todo.done ? ' done' : ''}`}>
           <p>{props.todo.name}</p> 
         </div>
     );

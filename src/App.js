@@ -1,13 +1,13 @@
 import React from 'react';
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-import './components/Todo.css'
+import './components/Todo.css';
 
 const todoList = [
    {
-     name:'',
-     id:1,
-     done:false
+     name:'hello',
+     id:0,
+     done: false,
    } 
   ];
   class App extends React.Component {
@@ -21,7 +21,7 @@ const todoList = [
     }
   }
 
-  toggleItem = (id)=> {
+  toggleTodo = (id)=> {
     const newTodoList = this.state.todoList.map(todo => {
       if (todo.id === id) {
         return( {
@@ -34,7 +34,7 @@ const todoList = [
     });
 
     this.setState({
-      todolist:newTodoList
+      todoList:newTodoList
     });
   }
     addTodo = (todoName)=> {
@@ -58,7 +58,7 @@ const todoList = [
       <div>
         <h2>Welcome to your Todo App!</h2>
        <TodoForm addTodo={this.addTodo}/>
-       <TodoList clearDone={this.clearDone} toggleItem={this.toggleItem} todoList={this.state.todoList}/>
+       <TodoList clearDone={this.clearDone} toggleTodo={this.toggleTodo} todoList={this.state.todoList}/>
       </div>
     );
   }
